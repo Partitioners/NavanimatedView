@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+<objectAnimator
+        android:duration="3000"
+        android:propertyName="trimPathEnd"
+        android:valueFrom="0.0"
+        android:valueTo="0.9"
+
+       android:repeatCount="infinite"
+        android:valueType="floatType"
+        tools:targetApi="lollipop" />
+</set>
