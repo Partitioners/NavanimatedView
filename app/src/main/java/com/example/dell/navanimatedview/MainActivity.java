@@ -24,7 +24,7 @@ import com.sdsmdg.harjot.vectormaster.models.PathModel;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView rotateImage, rotateImageBack, mSettings, mBounce, mFrameItem;
+    ImageView rotateImage, rotateImageBack, mSettings, mBounce, mFrameItem1,mFrameItem2;
     ObjectAnimator mAnimator, appsAnimator;
     Button startAnimation;
 
@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         startAnimation = (Button) findViewById(R.id.start_animation);
         mSettings = (ImageView) findViewById(R.id.settings);
         mBounce = (ImageView) findViewById(R.id.bounce);
-        mFrameItem = (ImageView) findViewById(R.id.frame_item);
+        mFrameItem1 = (ImageView) findViewById(R.id.frame_item_1);
+        mFrameItem2 = (ImageView) findViewById(R.id.frame_item_2);
         initRotateAnimation();
 
 
@@ -148,10 +149,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void startFrameItemAnimation() {
         //TODO implement this type of animation
-//        ObjectAnimator frameItemAnimation = ObjectAnimator.ofFloat(mFrameItem, "rotationX", 0f, 90f);
-//        frameItemAnimation.setDuration(1000);
-//        frameItemAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
-//        frameItemAnimation.start();
+        ObjectAnimator frameItemAnimation1 = ObjectAnimator.ofFloat(mFrameItem1, "rotation", 0f, 90f);
+        ObjectAnimator frameItemAnimation2 = ObjectAnimator.ofFloat(mFrameItem2, "rotation", 0f, -90f);
 
+        frameItemAnimation1.setDuration(300);
+        frameItemAnimation2.setDuration(300);
+
+        frameItemAnimation1.setInterpolator(new AccelerateDecelerateInterpolator());
+        frameItemAnimation2.setInterpolator(new AccelerateDecelerateInterpolator());
+        frameItemAnimation1.start();
+        frameItemAnimation2.start();
     }
 }
